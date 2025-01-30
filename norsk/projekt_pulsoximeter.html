@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>mR007x Tech - Projekt - Pulsoximeter</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Selecao
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">mR007x Tech</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="om.html">Om</a></li>
+          <li class="dropdown"><a href="#"><span>Anteckningar</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="notes_git.html">GIT</a></li>
+              <li><a href="notes_vscode.html">Visual Studio Code</a></li>
+              <li><a href="notes_elektronik.html">Elektronik</a></li>
+              <li><a href="notes_arduino.html">Arduino</a></li>
+              <li><a href="notes_esp32.html">ESP32</a></li>
+              <li><a href="notes_esp32-cam.html">ESP32-CAM</a></li>
+              <li><a href="notes_esp8266.html">ESP8266</a></li>
+              <li><a href="notes_rpi-pico.html">Raspberry Pi Pico</a></li>
+              <li><a href="notes_rpi.html">Raspberry Pi</a></li>
+              <li><a href="notes_maix.html">Sipeed Maix</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Experiment</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="exp_elektronik.html">Elektronik</a></li>
+              <li><a href="exp_arduino.html">Arduino</a></li>
+              <li><a href="exp_esp32.html">ESP32</a></li>
+              <li><a href="exp_esp32-cam.html">ESP32-CAM</a></li>
+              <li><a href="exp_esp8266.html">ESP8266</a></li>
+              <li><a href="exp_rpi-pico.html">Raspberry Pi Pico</a></li>
+              <li><a href="exp_rpi.html">Raspberry Pi</a></li>
+              <li><a href="exp_maix.html">Sipeed Maix</a></li>
+            </ul>
+          </li>
+		  <li class="dropdown"><a href="#"><span>Projekt</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="projekt_robot.html">Robotprojekt</a></li>
+              <li><a href="projekt_elektronik.html">Elektronik</a></li>
+              <li><a href="projekt_arduino.html">Arduino</a></li>
+              <li><a href="projekt_esp32.html">ESP32</a></li>
+              <li><a href="projekt_esp32-cam.html">ESP32-CAM</a></li>
+              <li><a href="projekt_esp8266.html">ESP8266</a></li>
+              <li><a href="projekt_rpi-pico.html">Raspberry Pi Pico</a></li>
+              <li><a href="projekt_rpi.html">Raspberry Pi</a></li>
+              <li><a href="projekt_maix.html">Sipeed Maix</a></li>
+            </ul>
+          </li>
+          <li><a href="resurser.html">Resurser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+   <div class="page-title dark-background">
+      <div class="container position-relative">
+        <!-- <h1>Välkommen</h1> -->
+        <!-- <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p> -->
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="projekt_esp32.html">Projekt</a></li>
+            <li class="current">ESP32 Pulsoximeter</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+	<section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <center><img src="assets/img/circuit.jpg" alt="" class="img-fluid"></center>
+                </div>
+
+                <h2 class="title">Projekt - Pulsoximeter</h2>
+
+                <div class="content">
+                  <p>
+                    Jag har alltid varit nyfiken på hur olika tekniska produkter fungerar, och efter att jag börjat besöka vården oftare så började jag bli nyfiken
+                    på olika produkter som jag stött på där. Som blodtrycksmätare och hur mätningen fungerar. Även en pulsoximeter där dom kollar syresmättnad i blodet.
+                    Jag fick tag på en MAX30102 för ett tag sen för att experimentera lite. Det är vad detta projekt handlar om.
+                </p>
+
+                  <h3>Komponenter</h3>
+                  <p>
+                    Här är en kort presentation av produkter som används i projektet.</p>
+                  <p>
+                    <ul>
+                        <li><b>ESP32-WROOM-32</b> - Hjärnan i projektet</li>
+                        <li><b>MAX30102</b> - Pulsoximeter och Pulssensor</li>
+                        <li><b>OLED Display</b> - Visa data från MAX30102</li>
+                        <li><b>Tryckknappar</b> - Navigering i menyn</li>
+                        <li><b>MicroSD</b> - Spara data</li>
+                        <li><b>USB-laddare</b> - Strömförsörjning 5V 1A</li>
+                    </ul>
+                  </p>
+
+                  <h3>Anslutningar</h3>
+                  <p>
+                    Hur jag har anslutit komponenter till ESP32.</p>
+                  <h5>MAX30102</h5>
+                  <p>
+                    <ul>
+                        <li><b>VIN</b> - ESP32 3v3</li>
+                        <li><b>SCL</b> - ESP32 GPIO 22</li>
+                        <li><b>SDA</b> - ESP32 GPIO 21</li>
+                        <li><b>GND</b> - ESP32 GND</li>
+                    </ul>
+                  </p>
+                  <h5>OLED</h5>
+                  <p>
+                    <ul>
+                        <li><b>GND</b> - ESP32 GND</li>
+                        <li><b>VCC</b> - ESP32 3v3</li>
+                        <li><b>SCL</b> - ESP32 GPIO 22</li>
+                        <li><b>SDA</b> - ESP32 GPIO 21</li>
+                    </ul>
+                  </p>
+                  <h5>Tryckknappar</h5>
+                  <p>
+                    <ul>
+                        <li><b>1</b> - ESP32 GPIO 15</li>
+                        <li><b>2</b> - ESP32 GPIO 2</li>
+                        <li><b>3</b> - ESP32 GPIO 4</li>
+                        <li><b>4</b> - ESP32 GPIO 34</li>
+                        <li><b>5</b> - ESP32 GPIO 35</li>
+                    </ul>
+                  </p>
+                  <h5>MicroSD</h5>
+                  <p>
+                    <ul>
+                        <li><b>3v3</b> - ESP32 3v3</li>
+                        <li><b>CS</b> - ESP32 GPIO 5</li>
+                        <li><b>MOSI</b> - ESP32 GPIO 23</li>
+                        <li><b>CLK</b> - ESP32 GPIO 18</li>
+                        <li><b>MISO</b> - ESP32 GPIO 19</li>
+                        <li><b>GND</b> - ESP32 GND</li>
+                    </ul>
+                  </p>
+
+				          <h3>MAX30102 Pulsoximeter - Överblick</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <h5>Strömbehov</h5>
+                  <p>Text</p>
+                  <h5>Temperatursensor</h5>
+                  <p>Text</p>
+                  <h5>I2C-gränssnitt</h5>
+                  <p>Text</p>
+                  <h5>FIFO Buffer</h5>
+                  <p>Text</p>
+                  <h5>Interrupts</h5>
+                  <p>Text</p>
+                  <p>
+                    <ul>
+                        <li><b>Text:</b> Text</li>
+                        <li><b>Text:</b> Text</li>
+                        <li><b>Text:</b> Text</li>
+                        <li><b>Text:</b> Text</li>
+                        <li><b>Text:</b> Text</li>
+                    </ul>
+                  </p>
+                  <p>Text</p>
+                  <h5>Fakta</h5>
+                  <p>
+                    <ul>
+                        <li><b>Maximal strömförbrukning:</b> 6mA</li>
+                        <li><b>Spänning:</b> 3.3 - 5V</li>
+                        <li><b>Samplingsfrekvens:</b> 50Hz - 3200Hz</li>
+                        <li><b>Temperaturomfång:</b> -40C till +85C</li>
+                        <li><b>Noggrannhet Temperatur:</b> +/- 1C</li>
+                        <li><b>ADC-Upplösning:</b> 18-bits</li>
+                        <li><b>IR LED Toppvåglängd:</b> 880nm</li>
+                        <li><b>Röd Led Toppvåglängd:</b> 660nm</li>
+                    </ul>
+                  </p>
+                  <h5>Nyckelfunktioner</h5>
+                  <p>
+                    <ul>
+                        <li>Text</li>
+                    </ul>
+                  </p>
+
+                  <h3>MAX30102 Pulsoximeter - Hur sensorn fungerar</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <h5>Pulsmätning</h5>
+                  <p>Text</p>
+                  <h5>Pulsoximetri</h5>
+                  <p>Text</p>
+
+                  <h3>MAX30102 Pulsoximeter - Pinanslutningar</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <center><img src="img/max30102/pinout.jpg" alt="" class="img-fluid"></center>
+                  </p>
+                  <p>
+                    <ul>
+                        <li><b>VIN</b> text</li>
+                        <li><b>SCL</b> text</li>
+                        <li><b>SDA</b> text</li>
+                        <li><b>INT</b> text</li>
+                        <li><b>IRD</b> text</li>
+                        <li><b>RD</b> text</li>
+                        <li><b>GND</b> text</li>
+                    </ul>
+                  </p>
+
+                  <h3>OLED Display</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <h5>Titel</h5>
+                  <p>Text</p>
+                  <h5>Titel</h5>
+                  <p>Text</p>
+
+                  <h3>Tryckknappar</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <h5>Titel</h5>
+                  <p>Text</p>
+                  <h5>Titel</h5>
+                  <p>Text</p>
+
+                  <h3>MicroSD</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <h5>Titel</h5>
+                  <p>Text</p>
+                  <h5>Titel</h5>
+                  <p>Text</p>
+
+                </div><!-- End post content -->
+
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+          <!-- Image Section -->
+          <section id="blog-posts" class="blog-posts section">
+
+            <div class="container">
+            <div class="row gy-4">
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/max30102/01.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/max30102/02.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/max30102/03.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/max30102/04.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/max30102/05.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/max30102/06.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+            </div>
+        </section><!-- /Image Section -->
+
+          </div>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">mR007x Tech</h3>
+      <p>Robotik, Artificiell Intelligens, Inbyggda System. Arduino, ESP32, ESP8266, Raspberry Pi, Raspberry Pi Pico, Sipeed MaixPy.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">mR007x Tech</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

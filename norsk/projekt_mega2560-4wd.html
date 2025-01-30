@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>mR007x Tech - Projekt - Robot - Arduino Mega 2560 4WD Robot</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Selecao
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">mR007x Tech</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="om.html">Om</a></li>
+          <li class="dropdown"><a href="#"><span>Anteckningar</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="notes_git.html">GIT</a></li>
+              <li><a href="notes_vscode.html">Visual Studio Code</a></li>
+              <li><a href="notes_elektronik.html">Elektronik</a></li>
+              <li><a href="notes_arduino.html">Arduino</a></li>
+              <li><a href="notes_esp32.html">ESP32</a></li>
+              <li><a href="notes_esp32-cam.html">ESP32-CAM</a></li>
+              <li><a href="notes_esp8266.html">ESP8266</a></li>
+              <li><a href="notes_rpi-pico.html">Raspberry Pi Pico</a></li>
+              <li><a href="notes_rpi.html">Raspberry Pi</a></li>
+              <li><a href="notes_maix.html">Sipeed Maix</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Experiment</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="exp_elektronik.html">Elektronik</a></li>
+              <li><a href="exp_arduino.html">Arduino</a></li>
+              <li><a href="exp_esp32.html">ESP32</a></li>
+              <li><a href="exp_esp32-cam.html">ESP32-CAM</a></li>
+              <li><a href="exp_esp8266.html">ESP8266</a></li>
+              <li><a href="exp_rpi-pico.html">Raspberry Pi Pico</a></li>
+              <li><a href="exp_rpi.html">Raspberry Pi</a></li>
+              <li><a href="exp_maix.html">Sipeed Maix</a></li>
+            </ul>
+          </li>
+		  <li class="dropdown"><a href="#"><span>Projekt</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="projekt_robot.html">Robotprojekt</a></li>
+              <li><a href="projekt_elektronik.html">Elektronik</a></li>
+              <li><a href="projekt_arduino.html">Arduino</a></li>
+              <li><a href="projekt_esp32.html">ESP32</a></li>
+              <li><a href="projekt_esp32-cam.html">ESP32-CAM</a></li>
+              <li><a href="projekt_esp8266.html">ESP8266</a></li>
+              <li><a href="projekt_rpi-pico.html">Raspberry Pi Pico</a></li>
+              <li><a href="projekt_rpi.html">Raspberry Pi</a></li>
+              <li><a href="projekt_maix.html">Sipeed Maix</a></li>
+            </ul>
+          </li>
+          <li><a href="resurser.html">Resurser</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+   <div class="page-title dark-background">
+      <div class="container position-relative">
+        <!-- <h1>Välkommen</h1> -->
+        <!-- <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p> -->
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="projekt_robot.html">Projekt</a></li>
+            <li class="current">Robot - Arduino Mega 2560 4WD Robot</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+	<section id="blog-details" class="blog-details section">
+            <div class="container">
+
+              <article class="article">
+
+                <div class="post-img">
+                  <center><img src="img/mega2560-4wd/main.jpg" alt="" class="img-fluid"></center>
+                </div>
+
+                <h2 class="title">Projekt - Robot - Arduino Mega 2560 4WD Robot</h2>
+
+                <div class="content">
+                  <p>
+                    Detta är en experimentell robot baserad på Arduino Mega 2560 och syftet är att hjälpa mig med mina robotstudier.
+                    Roboten kommer utvecklas i steg. Senare i robotens utveckling så kommer en Sipeed MaiX-Dock läggas till för att skapa
+                    en mer avancerad robot. I det steget så kommer Arduinon finnas kvar för att kontrollera motorer och andra enklare
+                    funktioner. Projektet kommer pågå så länge som det finns förbättringar/uppgraderingar att göra. Alla mina robotar utvecklas med en begränsad budget.
+                  </p>
+
+                  <h3>Komponenter</h3>
+                  <p>
+                    Här är en lista över dom komponenter som använder (eller planeras).
+                  </p>
+                  <p>
+                    <ul>
+                        <li><b>Basplatta</b> x 2</li>
+                        <li><b>DC-motorer</b> x 4</li>
+                        <li><b>Hjul</b> x 4</li>
+                        <li><b>Arduino Mega 2560</b> x 1</li>
+                        <li><b>L293D Motorsköld</b> x 1</li>
+                        <li><b>HC-SR04 Ultraljudssensor</b> x 1</li>
+                        <li><b>IR Avståndssensorer</b> x 4</li>
+                        <li><b>18650 Batterier</b> x 4</li>
+                        <li><b>Batterihållare 18650 för två batterier</b> x 2</li>
+                        <li><b>LM2596 DC-DC Stepdown</b> x 1</li>
+                        <li><b>Enkoderhjul</b> x 2</li>
+                        <li><b>Optisk läsgaffel</b> x 2</li>
+                        <li><b>3w LED</b> x 1</li>
+                        <li><b>HMC5883L Digital Kompass</b> x 1</li>
+                        <li><b>MPU6050 Accelerometer och Gyroskop</b> x 1</li>
+                        <li><b>INA219 Strömsensor</b> x 1</li>
+                        <li><b>Powerbank</b> x 1</li>
+                        <li><b>Powerbank Keep-Alive</b> x 1</li>
+                        <li><b>OLED-Skärm</b> x 1</li>
+                        <li><b>ESP-01 WiFi-modul</b> x 1</li>
+                        <li><b>SPP-C Bluetooth Serial Pass-Through Modul</b> x 1</li>
+                        <li><b>Sipeed Maix-Dock</b> x 1</li>
+                    </ul>
+                  </p>
+
+                  <h3>Anslutningar</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>HC-SR04 Ultraljudssensor</h5>
+                    <ol>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>Echo</b> - <i>Grön kabel</i> - Arduino 24</li>
+                      <li><b>Trig</b> - <i>Lila kabel</i> - Arduino 25</li>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>IR Vänster</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>OUT</b> - <i>Blå kabel</i> - Arduino 26</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>IR Höger</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>OUT</b> - <i>Grön kabel</i> - Arduino 27</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>IR Bak</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>OUT</b> - <i>Gul kabel</i> - Arduino 28</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>IR Höjd</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>OUT</b> - <i>Grå kabel</i> - Arduino 29</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>Enkoder Vänster</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>A0</b> - <i>Vit kabel</i> - Arduino 30</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>Enkoder Höger</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>A0</b> - <i>Grön kabel</i> - Arduino 31</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>3W LED</h5>
+                    <ol>
+                      <li><b>+</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>G</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>S</b> - <i>Vit kabel</i> - Arduino 32</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>ESP-01 WiFi-Modul</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>RX</b> - <i>Blå kabel</i> - Arduino 18</li>
+                      <li><b>TX</b> - <i>Vit kabel</i> - 19</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>INA219 Strömsensor</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>SCL</b> - <i>Orange kabel</i> - Arduino 21 (SCL)</li>
+                      <li><b>SDA</b> - <i>Gul kabel</i> - Arduino 20 (SDA)</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>MPU6050</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>SCL</b> - <i>Orange kabel</i> - Arduino 21 (SCL)</li>
+                      <li><b>SDA</b> - <i>Gul kabel</i> - Arduino 20 (SDA)</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>HMC5883L</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>SCL</b> - <i>Orange kabel</i> - Arduino 21 (SCL)</li>
+                      <li><b>SDA</b> - <i>Gul kabel</i> - Arduino 20 (SDA)</li>
+                    </ol>
+                  </p>
+                  <p>
+                    <h5>OLED-Skärm</h5>
+                    <ol>
+                      <li><b>VCC</b> - <i>Röd kabel</i> - Arduino 5V</li>
+                      <li><b>GND</b> - <i>Svart kabel</i> - Arduino GND</li>
+                      <li><b>SCL</b> - <i>Orange kabel</i> - Arduino 21 (SCL)</li>
+                      <li><b>SDA</b> - <i>Gul kabel</i> - Arduino 20 (SDA)</li>
+                    </ol>
+                  </p>
+
+                  <h3>Robotens evolution</h3>
+                  <p>
+                    Detta är en lista över dom steg som är planerade för roboten.</p>
+                  <p>
+                    <ol>
+                        <li>Få roboten att förflytta sig (test av L293D Motorsköld)</li>
+                        <li>Gå igenom strömförsörjning</li>
+                        <li>Hålla koll på strömförbrukning med INA219</li>
+                        <li>Visa data från INA219 på OLED-skärm</li>
+                        <li>Navigation med HC-SR04 Ultraljudssensor och IR-sensorer</li>
+                        <li>Navigation med Enkoderhjul</li>
+                        <li>Navigation med HMC5883L Digital Kompass</li>
+                        <li>Navigation med MPU6050</li>
+                        <li>WiFi-Modul och data till RPi-Server</li>
+                        <li>Manuell kontroll via bluetooth och mobilapp</li>
+                        <li>Uppgradering med Sipeed Maix-Dock</li>
+                    </ol>
+                  </p>
+
+                  <h3>Basplattor</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>DC-Motorer</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>Hjul</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+				          <h3>L293D Motorsköld</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>HC-SR04 Ultraljudssensor</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>IR Distanssensor</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>Hjulenkoder - Enkoderhjul + Optisk läsare</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>INA219 Strömsensor</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>18650 Batterier</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>LM2596 DC-DC Konverterare</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>Powerbank</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>Powerbank Keep-Alive</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>HMC5883L Digital Kompass</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>MPU6050 Accelerometer och Gyroskop</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>ESP-01 WiFi Modul</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>OLED-Skärm SSD1306</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>Bluetooth-modul - SPP-C Bluetooth Serial Pass-Through JDY-31-SPP</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                  <h3>Sipeed Maix-Dock</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    <h5>Titel</h5>
+                    <p>Text</p>
+                  </p>
+
+                </div><!-- End post content -->
+
+              </article>
+
+            </div>
+          </section><!-- /Blog Details Section -->
+
+          <!-- Image Section -->
+          <section id="blog-posts" class="blog-posts section">
+
+            <div class="container">
+            <div class="row gy-4">
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/mega2560-4wd/01.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/mega2560-4wd/02.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/mega2560-4wd/03.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/mega2560-4wd/04.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/mega2560-4wd/05.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+    
+                <div class="col-lg-4">
+                <article>
+    
+                    <div class="post-img">
+                    <img src="img/mega2560-4wd/06.jpg" alt="" class="img-fluid">
+                    </div>
+    
+                </article>
+                </div><!-- End post list item -->
+                <div class="col-lg-4">
+                    <article>
+        
+                        <div class="post-img">
+                        <img src="img/mega2560-4wd/07.jpg" alt="" class="img-fluid">
+                        </div>
+        
+                    </article>
+                    </div><!-- End post list item -->
+        
+                    <div class="col-lg-4">
+                    <article>
+        
+                        <div class="post-img">
+                        <img src="img/mega2560-4wd/08.jpg" alt="" class="img-fluid">
+                        </div>
+        
+                    </article>
+                    </div><!-- End post list item -->
+        
+                    <div class="col-lg-4">
+                    <article>
+        
+                        <div class="post-img">
+                        <img src="img/mega2560-4wd/09.jpg" alt="" class="img-fluid">
+                        </div>
+        
+                    </article>
+                    </div><!-- End post list item -->
+        
+                    <div class="col-lg-4">
+                    <article>
+        
+                        <div class="post-img">
+                        <img src="img/mega2560-4wd/10.jpg" alt="" class="img-fluid">
+                        </div>
+        
+                    </article>
+                    </div><!-- End post list item -->
+        
+                    <div class="col-lg-4">
+                    <article>
+        
+                        <div class="post-img">
+                        <img src="img/mega2560-4wd/11.jpg" alt="" class="img-fluid">
+                        </div>
+        
+                    </article>
+                    </div><!-- End post list item -->
+        
+                    <div class="col-lg-4">
+                    <article>
+        
+                        <div class="post-img">
+                        <img src="img/mega2560-4wd/12.jpg" alt="" class="img-fluid">
+                        </div>
+        
+                    </article>
+                    </div><!-- End post list item -->
+
+                    <div class="col-lg-4">
+                      <article>
+          
+                          <div class="post-img">
+                          <img src="img/mega2560-4wd/13.jpg" alt="" class="img-fluid">
+                          </div>
+          
+                      </article>
+                      </div><!-- End post list item -->
+          
+                      <div class="col-lg-4">
+                      <article>
+          
+                          <div class="post-img">
+                          <img src="img/mega2560-4wd/14.jpg" alt="" class="img-fluid">
+                          </div>
+          
+                      </article>
+                      </div><!-- End post list item -->
+          
+                      <div class="col-lg-4">
+                      <article>
+          
+                          <div class="post-img">
+                          <img src="img/mega2560-4wd/15.jpg" alt="" class="img-fluid">
+                          </div>
+          
+                      </article>
+                      </div><!-- End post list item -->
+
+                      <div class="col-lg-4">
+                        <article>
+            
+                            <div class="post-img">
+                            <img src="img/mega2560-4wd/16.jpg" alt="" class="img-fluid">
+                            </div>
+            
+                        </article>
+                        </div><!-- End post list item -->
+
+                        <div class="col-lg-4">
+                          <article>
+              
+                              <div class="post-img">
+                              <img src="img/mega2560-4wd/17.jpg" alt="" class="img-fluid">
+                              </div>
+              
+                          </article>
+                          </div><!-- End post list item -->
+
+                          <div class="col-lg-4">
+                            <article>
+                
+                                <div class="post-img">
+                                <img src="img/mega2560-4wd/18.jpg" alt="" class="img-fluid">
+                                </div>
+                
+                            </article>
+                            </div><!-- End post list item -->
+
+                            <div class="col-lg-4">
+                              <article>
+                  
+                                  <div class="post-img">
+                                  <img src="img/mega2560-4wd/19.jpg" alt="" class="img-fluid">
+                                  </div>
+                  
+                              </article>
+                              </div><!-- End post list item -->
+
+                              <div class="col-lg-4">
+                                <article>
+                    
+                                    <div class="post-img">
+                                    <img src="img/mega2560-4wd/20.jpg" alt="" class="img-fluid">
+                                    </div>
+                    
+                                </article>
+                                </div><!-- End post list item -->
+
+                                <div class="col-lg-4">
+                                  <article>
+                      
+                                      <div class="post-img">
+                                      <img src="img/mega2560-4wd/21.jpg" alt="" class="img-fluid">
+                                      </div>
+                      
+                                  </article>
+                                  </div><!-- End post list item -->
+
+                                  <div class="col-lg-4">
+                                    <article>
+                        
+                                        <div class="post-img">
+                                        <img src="img/mega2560-4wd/22.jpg" alt="" class="img-fluid">
+                                        </div>
+                        
+                                    </article>
+                                    </div><!-- End post list item -->
+
+                                    <div class="col-lg-4">
+                                      <article>
+                          
+                                          <div class="post-img">
+                                          <img src="img/mega2560-4wd/23.jpg" alt="" class="img-fluid">
+                                          </div>
+                          
+                                      </article>
+                                      </div><!-- End post list item -->
+                                      <div class="col-lg-4">
+                                        <article>
+                            
+                                            <div class="post-img">
+                                            <img src="img/mega2560-4wd/24.jpg" alt="" class="img-fluid">
+                                            </div>
+                            
+                                        </article>
+                                        </div><!-- End post list item -->
+            </div>
+        </section><!-- /Image Section -->
+
+          </div>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">mR007x Tech</h3>
+      <p>Robotik, Artificiell Intelligens, Inbyggda System. Arduino, ESP32, ESP8266, Raspberry Pi, Raspberry Pi Pico, Sipeed MaixPy.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">mR007x Tech</strong> <span>All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
