@@ -47,3 +47,14 @@ async function loadMenu() {
 
 loadMenu();
 
+// Mobilnav toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".menu-center");
+
+    if (burger) {
+        burger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    }
+});

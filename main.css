@@ -3,31 +3,73 @@
 body {
     margin: 0;
     padding: 0;
-    background: #1e1e1e; /* VS Code dark */
+    background: #1e1e1e;
     color: #d4d4d4;
     font-family: Consolas, monospace;
     line-height: 1.6;
 }
 
-/* ======== Header, titel och menycentrering ======== */
+/* ======== Syntax Highlight Inspired Headings ======== */
+
+h1 {
+    color: #d16969; /* matt röd */
+}
+
+h2, h3, h4, h5, h6 {
+    color: #569cd6; /* matt blå */
+}
+
+a {
+    color: #4fc1ff; /* cyan / string highlight */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #9cdcfe;
+}
+
+/* Viktiga ord */
+.important {
+    color: #9cdcfe;
+    font-weight: bold;
+}
+
+/* Inline code */
+code {
+    background: #272727;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #ce9178; /* string-färg */
+}
+
+/* Block code */
+pre {
+    background: #1b1b1b;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    color: #c586c0; /* function names */
+}
+
+/* ======== Header, Titel och centrerad meny ======== */
 
 header {
     background: #262626;
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    position: relative;  /* viktigt för absolut positionering av menyn */
+    position: relative;
     border-bottom: 1px solid #333;
 }
 
 #site-title {
     font-size: 20px;
     font-weight: bold;
-    margin-right: auto;  /* vänsterjusterad titel */
-    z-index: 2;          /* ligger över menyn */
+    margin-right: auto;
+    z-index: 2;
 }
 
-/* Wrapper som centrerar menyn */
+/* Wrapper för centrerad meny */
 .menu-center {
     position: absolute;
     left: 50%;
@@ -35,9 +77,8 @@ header {
     z-index: 1;
 }
 
-/* ======== Meny (nivå 1) ======== */
+/* ======== Meny nivå 1 ======== */
 
-nav ul,
 .menu-center nav ul {
     list-style: none;
     margin: 0;
@@ -48,13 +89,12 @@ nav ul,
 
 nav li {
     position: relative;
-    overflow: visible; /* viktigt för Firefox och Edge */
+    overflow: visible;
 }
 
 nav li a,
 nav li span {
     color: #d4d4d4;
-    text-decoration: none;
     cursor: pointer;
     white-space: nowrap;
 }
@@ -67,7 +107,7 @@ nav li:hover > span {
 /* ======== Dropdown nivå 1 ======== */
 
 .dropdown-content {
-    display: none;      /* start hidden */
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -77,8 +117,7 @@ nav li:hover > span {
     border: 1px solid #444;
     min-width: 180px;
     z-index: 1000;
-    
-    /* Cross-browser hover */
+
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;
@@ -98,10 +137,10 @@ nav li:hover > span {
 }
 
 .dropdown-content li .dropdown-content {
-    display: none;      /* start hidden */
+    display: none;
     position: absolute;
     top: 0;
-    left: 100%;        /* placera till höger om parent */
+    left: 100%;
     margin-left: 5px;
     background: #2c2c2c;
     border: 1px solid #444;
@@ -118,6 +157,55 @@ nav li:hover > span {
     display: block;
     visibility: visible;
     opacity: 1;
+}
+
+/* ======== Mobilnav (hamburgermeny under 768px) ======== */
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 26px;
+    color: #d4d4d4;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu-center nav ul {
+        flex-direction: column;
+        gap: 0;
+        display: none;
+        position: absolute;
+        background: #262626;
+        top: 55px;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #333;
+    }
+
+    .menu-center.active nav ul {
+        display: flex;
+    }
+
+    .menu-center nav ul li {
+        border-bottom: 1px solid #333;
+        padding: 10px 20px;
+    }
+
+    /* Dropdowns expanderar vertikalt på mobil */
+    .dropdown-content,
+    .dropdown-content li .dropdown-content {
+        position: relative;
+        left: 0;
+        top: 0;
+        border: none;
+        padding-left: 20px;
+        background: #1f1f1f;
+    }
 }
 
 /* ======== Content ======== */
