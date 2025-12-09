@@ -1,73 +1,52 @@
-body {
-    margin: 0;
-    background: #1e1e1e;
-    color: #d4d4d4;
-    font-family: Consolas, monospace;
-    line-height: 1.65;
-}
-
-/* Top bar */
-header {
-    background: #252526;
-    padding: 10px 20px;
-    display: flex;
-    border-bottom: 1px solid #333;
-}
-
-#site-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: auto;
-}
-
-/* Navigation */
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav li a, nav li span {
-    text-decoration: none;
-    color: #d4d4d4;
-    cursor: pointer;
-}
-
-nav li:hover > a,
-nav li:hover > span {
-    color: #ffffff;
-}
-
-.dropdown {
+/* Dropdown: nivå 1 */
+nav li {
     position: relative;
 }
 
-.dropdown > ul {
+.dropdown-content {
     display: none;
     position: absolute;
-    background: #2d2d2d;
-    border: 1px solid #444;
+    background: #2c2c2c;
     padding: 10px;
     list-style: none;
-    margin: 0;
+    border: 1px solid #444;
+    min-width: 180px;
+    z-index: 1000;
+    top: 100%; /* första nivå placerad under */
+    left: 0;
 }
 
-.dropdown:hover > ul {
+/* Visa första nivån */
+nav li:hover > .dropdown-content {
     display: block;
 }
 
-/* Content */
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* Dropdown: nivå 2 och framåt (dropdown i dropdown) */
+.dropdown-content li {
+    position: relative;
 }
 
-img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin: 20px 0;
+.dropdown-content li .dropdown-content {
+    display: none;
+    top: 0;
+    left: 100%; /* placera till höger om menyn */
+    margin-left: 5px;
 }
+
+/* Visa nivå 2+ */
+.dropdown-content li:hover > .dropdown-content {
+    display: block;
+}
+
+/* Länkar och spans */
+nav li a, nav li span {
+    color: #d4d4d4;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap; /* för snygga smala menyer */
+}
+
+nav li:hover > a, nav li:hover > span {
+    color: #ffffff;
+}
+

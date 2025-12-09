@@ -1,32 +1,49 @@
 async function loadMenu() {
-    const res = await fetch("./menu.json");
-    const menu = await res.json();
-    const nav = document.getElementById("navbar");
+    try {
+        const res = await fetch("./menu.json");
+        const menu = await res.json();
 
-    document.getElementById("site-title").textContent = menu.title;
+        const title = document.getElementById("site-title");
+        const nav = document.getElementById("navbar");
 
-    function buildItems(items) {
-        const ul = document.createElement("ul");
+        title.textContent = menu.title;
 
-        items.forEach(item => {
-            const li = document.createElement("li");
+        // Rekursiv funktion som bygger menyer
+        function buildItems(items, container) {
+            items.forEach(item => {
+                const li = document.createElement("li");
 
-            if (item.children) {
-                li.className = "dropdown";
-                li.innerHTML = `<span>${item.label}</span>`;
-                li.appendChild(buildItems(item.children));
-            } else {
-                li.innerHTML = `<a href="${item.link}">${item.label}</a>`;
-            }
+                if (item.children) {
+                    li.classList.add("dropdown");
 
-            ul.appendChild(li);
-        });
+                    const label = document.createElement("span");
+                    label.textContent = item.label;
+                    li.appendChild(label);
 
-        return ul;
+                    const ul = document.createElement("ul");
+                    ul.classList.add("dropdown-content");
+
+                    // bygg barnmenyn rekursivt
+                    buildItems(item.children, ul);
+
+                    li.appendChild(ul);
+                } else {
+                    const link = document.createElement("a");
+                    link.href = item.link;
+                    link.textContent = item.label;
+                    li.appendChild(link);
+                }
+
+                container.appendChild(li);
+            });
+        }
+
+        buildItems(menu.items, nav);
+
+    } catch (err) {
+        console.error("Kunde inte ladda menydata:", err);
     }
-
-    const rootItems = buildItems(menu.items).children;
-    Array.from(rootItems).forEach(el => nav.appendChild(el));
 }
 
 loadMenu();
+
