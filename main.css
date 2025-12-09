@@ -1,27 +1,90 @@
-/* Dropdown: nivå 1 */
+/* ======== Bas ======== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #1e1e1e; /* VS Code dark */
+    color: #d4d4d4;
+    font-family: Consolas, monospace;
+    line-height: 1.6;
+}
+
+/* ======== Header, titel och menycentrering ======== */
+
+header {
+    background: #262626;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;  /* Viktigt för absolut positionering av menyn */
+    border-bottom: 1px solid #333;
+}
+
+#site-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: auto;  /* Håll titeln vänsterjusterad */
+    z-index: 2;          /* Ligger över menyn om de skulle överlappa */
+}
+
+/* Meny wrapper som ligger i mitten av headern */
+.menu-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* ======== Toppmeny (nivå 1) ======== */
+
+.menu-center nav ul,
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
 nav li {
     position: relative;
 }
 
+nav li a,
+nav li span {
+    color: #d4d4d4;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+nav li:hover > a,
+nav li:hover > span {
+    color: #ffffff;
+}
+
+/* ======== Dropdown nivå 1 ======== */
+
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%;   /* Placera rakt under förälder */
+    left: 0;
     background: #2c2c2c;
     padding: 10px;
     list-style: none;
     border: 1px solid #444;
     min-width: 180px;
     z-index: 1000;
-    top: 100%; /* första nivå placerad under */
-    left: 0;
 }
 
-/* Visa första nivån */
+/* Visa dropdown (första nivån) */
 nav li:hover > .dropdown-content {
     display: block;
 }
 
-/* Dropdown: nivå 2 och framåt (dropdown i dropdown) */
+/* ======== Dropdown nivå 2+ ======== */
+
 .dropdown-content li {
     position: relative;
 }
@@ -29,24 +92,4 @@ nav li:hover > .dropdown-content {
 .dropdown-content li .dropdown-content {
     display: none;
     top: 0;
-    left: 100%; /* placera till höger om menyn */
-    margin-left: 5px;
-}
-
-/* Visa nivå 2+ */
-.dropdown-content li:hover > .dropdown-content {
-    display: block;
-}
-
-/* Länkar och spans */
-nav li a, nav li span {
-    color: #d4d4d4;
-    text-decoration: none;
-    cursor: pointer;
-    white-space: nowrap; /* för snygga smala menyer */
-}
-
-nav li:hover > a, nav li:hover > span {
-    color: #ffffff;
-}
-
+    left: 100%;   /* Placera*
