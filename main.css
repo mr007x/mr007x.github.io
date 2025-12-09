@@ -16,18 +16,18 @@ header {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    position: relative;  /* Viktigt för absolut positionering av menyn */
+    position: relative;  /* viktigt för absolut positionering av menyn */
     border-bottom: 1px solid #333;
 }
 
 #site-title {
     font-size: 20px;
     font-weight: bold;
-    margin-right: auto;  /* Håll titeln vänsterjusterad */
-    z-index: 2;          /* Ligger över menyn om de skulle överlappa */
+    margin-right: auto;  /* vänsterjusterad titel */
+    z-index: 2;          /* ligger över menyn */
 }
 
-/* Meny wrapper som ligger i mitten av headern */
+/* Wrapper som centrerar menyn */
 .menu-center {
     position: absolute;
     left: 50%;
@@ -35,10 +35,10 @@ header {
     z-index: 1;
 }
 
-/* ======== Toppmeny (nivå 1) ======== */
+/* ======== Meny (nivå 1) ======== */
 
-.menu-center nav ul,
-nav ul {
+nav ul,
+.menu-center nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -48,6 +48,7 @@ nav ul {
 
 nav li {
     position: relative;
+    overflow: visible; /* viktigt för Firefox och Edge */
 }
 
 nav li a,
@@ -66,9 +67,9 @@ nav li:hover > span {
 /* ======== Dropdown nivå 1 ======== */
 
 .dropdown-content {
-    display: none;
+    display: none;      /* start hidden */
     position: absolute;
-    top: 100%;   /* Placera rakt under förälder */
+    top: 100%;
     left: 0;
     background: #2c2c2c;
     padding: 10px;
@@ -76,20 +77,61 @@ nav li:hover > span {
     border: 1px solid #444;
     min-width: 180px;
     z-index: 1000;
+    
+    /* Cross-browser hover */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
 }
 
-/* Visa dropdown (första nivån) */
-nav li:hover > .dropdown-content {
+.dropdown:hover > .dropdown-content {
     display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 /* ======== Dropdown nivå 2+ ======== */
 
 .dropdown-content li {
     position: relative;
+    overflow: visible;
 }
 
 .dropdown-content li .dropdown-content {
-    display: none;
+    display: none;      /* start hidden */
+    position: absolute;
     top: 0;
-    left: 100%;   /* Placera*
+    left: 100%;        /* placera till höger om parent */
+    margin-left: 5px;
+    background: #2c2c2c;
+    border: 1px solid #444;
+    padding: 10px;
+    min-width: 180px;
+    z-index: 1000;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+}
+
+.dropdown-content li:hover > .dropdown-content {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ======== Content ======== */
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ======== Bilder ======== */
+
+img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 20px 0;
+}
