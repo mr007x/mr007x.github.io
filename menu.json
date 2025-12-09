@@ -1,0 +1,64 @@
+{
+  "title": "Min Hemsida",
+  "items": [
+    {
+      "label": "Hem",
+      "link": "index.html"
+    },
+    {
+      "label": "Information",
+      "link": "page.html?page=information.md"
+    },
+    {
+      "label": "Projekt",
+      "children": [
+        {
+          "label": "Quarkus/Angular",
+          "children": [
+            { "label": "Projekt 1", "link": "page.html?page=projekt/quarkus-angular/projekt1.md" },
+            { "label": "Projekt 2", "link": "page.html?page=projekt/quarkus-angular/projekt2.md" }
+          ]
+        },
+        {
+          "label": "Robotik",
+          "children": [
+            { "label": "Robotprojekt 1", "link": "page.html?page=projekt/robotik/robotproj1.md" }
+          ]
+        },
+        {
+          "label": "Inbyggda System",
+          "children": [
+            { "label": "Projekt X", "link": "page.html?page=projekt/inbyggda-system/projx.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Texter",
+      "children": [
+        {
+          "label": "Musik",
+          "children": [
+            { "label": "Låttext 1", "link": "page.html?page=texter/musik/låttext1.md" }
+          ]
+        },
+        {
+          "label": "Quarkus",
+          "children": [
+            { "label": "Artikel 1", "link": "page.html?page=texter/quarkus/artikel1.md" }
+          ]
+        },
+        {
+          "label": "Angular",
+          "children": [
+            { "label": "Artikel 2", "link": "page.html?page=texter/angular/artikel2.md" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kontakt",
+      "link": "page.html?page=kontakt.md"
+    }
+  ]
+}

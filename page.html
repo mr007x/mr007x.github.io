@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Sida</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header>
+    <div id="site-title"></div>
+    <nav><ul id="navbar"></ul></nav>
+</header>
+
+<main id="content">
+    <h1>Laddar...</h1>
+</main>
+
+<script src="menu.js"></script>
+<script src="markdown.js"></script>
+
+<script>
+const params = new URLSearchParams(location.search);
+const page = params.get("page") || "ingen.md";
+
+fetch("pages/" + page)
+    .then(res => res.text())
+    .then(md => {
+        document.getElementById("content").innerHTML = markdownToHtml(md);
+    })
+    .catch(() => {
+        document.getElementById("content").innerHTML = "<h1>Sidan hittades inte.</h1>";
+    });
+</script>
+
+</body>
+</html>
